@@ -22,7 +22,7 @@ sources:
           - name: orders_id
             tests:
               - not_null
-          - name: pdt_id
+          - name: product_id
             tests:
               - not_null
           - name: revenue
