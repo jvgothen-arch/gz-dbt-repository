@@ -10,6 +10,6 @@ sources:
        - name: sales
          identifier : raw_gz_sales
        - name: product
-         identifier : raw_gz_product
+         identifier : raw_gwz_product
        - name: ship
          identifier : raw_gz_ship
