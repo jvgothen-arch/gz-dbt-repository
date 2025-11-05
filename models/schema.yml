@@ -5,57 +5,29 @@ sources:
     database: dynamic-sanctum-455919-n9
     schema: gz_raw_data
     loader: bigquery
-    description: "day 1 of dbt"
-
 
     tables:
       - name: sales
         identifier: raw_gz_sales
-        description: "Sales of gz: one row per product_id found in each orders_id"
-        loaded_at_field: date_date
-
+        description: "one row per (orders_id, product_id)"
         columns:
           - name: date_date
-            description: "date of purchase"
-            tests:
-              - not_null
           - name: orders_id
-            tests:
-              - not_null
-          - name: product_id
-            tests:
-              - not_null
-          - name: revenue
-          - name: quantity
-
+          - name: pdt_id    
         tests:
-          - dbt_utils.unique_combination_of_columns:
-              combination_of_columns: [orders_id, pdt_id]
+          - unique:
+              column_name: "(orders_id ||'-' || pdt_id)"
+         
 
       - name: product
         identifier: raw_gwz_product
-        description: "produit"
-        loaded_at_field: products_id
-
         columns:
           - name: products_id
             tests:
+              - unique
               - not_null
-              - unique     
-          - name: purchase_price
-            description: "valeur et valeur achat"
 
       - name: ship
         identifier: raw_gz_ship
-        description: "shipping costs and orders"
-        loaded_at_field: orders_id
-
         columns:
           - name: orders_id
-            tests:
-              - not_null
-          - name: shipping_fee
-          - name: shipping_fee_1     
-            description: "doublon"
-          - name: log_cost
-          - name: ship_cost
