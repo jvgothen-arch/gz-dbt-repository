@@ -10,7 +10,34 @@ sources:
      tables:
        - name: sales
          identifier : raw_gz_sales
+         description: sales of gz / we have on row per product_id found in each orders_id
+         loaded_at_field: date_date
+         columns:
+           - name: date_date
+             description: date of purchase
+           - name : orders_id
+           - name: pdt_id
+           - name: revenue
+           - name: quantity
        - name: product
          identifier : raw_gwz_product
+         description: produit
+         loaded_at_field: products_id
+         columns:
+          - name: products_id
+          - name: purchase_price
+            description: valeur et valeur achat
        - name: ship
          identifier : raw_gz_ship
+         loaded_at_field: orders_id
+         description: shipping costs and orders
+         columns:
+          - name: orders_id
+          - name: shipping_fee
+          - name: shipping_fee1
+            description: doublon
+          - name: log_cost
+          - name: ship_cost
+
+
+
