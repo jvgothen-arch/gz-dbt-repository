@@ -1,8 +1,9 @@
 version: 2
 
 sources:
-   - name: raw
-     schema: "{{ target.schema }}"
+   - name: gz_raw_data
+     database: dynamic-sanctum-455919-n9
+     schema: gz_raw_data
      loader: bigquery
      description: day 1 of dbt
 

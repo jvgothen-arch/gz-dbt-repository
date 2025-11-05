@@ -2,7 +2,7 @@ with
 
  source as (
 
-     select * from {{ source('raw', 'sales') }}
+     select * from {{ source('gz_raw_data', 'sales') }}
 
  ),
 
@@ -11,7 +11,7 @@ with
      select
          date_date,
          orders_id,
-         pdt_id,
+         pdt_id AS products_id,
          revenue,
          quantity
 
