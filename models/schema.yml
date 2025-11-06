@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    database: dynamic-sanctum-455919-n9
+    schema: gz_raw_data
+    loader: bigquery
+
+    tables:
+      - name: sales
+        identifier: raw_gz_sales
+        description: "one row per (orders_id, product_id)"
+        columns:
+          - name: date_date
+          - name: orders_id
+          - name: pdt_id    
+        tests:
+          - unique:
+              column_name: "(orders_id ||'-' || pdt_id)"
+         
+
+      - name: product
+        identifier: raw_gwz_product
+        columns:
+          - name: products_id
+            tests:
+              - unique
+              - not_null
+
+      - name: ship
+        identifier: raw_gz_ship
+        columns:
+          - name: orders_id
