@@ -40,3 +40,9 @@ models:
     # Applies to all files under models/example/
     staging:
       +materialized: table
+    
+
+    mart:
+       +materialized: table
+       finance:
+         +schema: finance
