@@ -73,4 +73,5 @@ sources:
 
       - name: campaigns_day
         identifier: int_campaigns_day
-
+      - name: finances camp
+        identifier: finance_campaigns_days
