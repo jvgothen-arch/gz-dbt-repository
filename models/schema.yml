@@ -47,7 +47,7 @@ sources:
 
 
       - name: adwords
-        identifier: raw_gz_criteo
+        identifier: raw_gz_adwords
         columns:
           - name: date_date
 
@@ -55,3 +55,4 @@ sources:
         identifier: raw_gz_criteo
         columns:
           - name: date_date
+
