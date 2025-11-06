@@ -13,7 +13,6 @@ joined as (
     s.products_id,
     s.revenue,
     s.quantity,
-    p.products_id,
     p.purchase_price,
 
     (s.quantity * p.purchase_price) as purchase_cost,
