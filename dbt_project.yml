@@ -39,4 +39,4 @@ models:
   gz_raw_data:
     # Applies to all files under models/example/
     staging:
-      +materialized: view
+      +materialized: tables
