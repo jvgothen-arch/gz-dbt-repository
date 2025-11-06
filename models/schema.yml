@@ -37,6 +37,9 @@ sources:
         description: "bing recherche et depense"
         columns:
           - name: date_date
+            tests:
+              - unique
+              - not_null
 
          
 
@@ -44,15 +47,30 @@ sources:
         identifier: raw_gz_facebook
         columns:
           - name: date_date
+            tests:
+              - unique
+              - not_null
 
 
       - name: adwords
         identifier: raw_gz_adwords
         columns:
           - name: date_date
+            tests:
+              - unique
+              - not_null
 
       - name: criteo
         identifier: raw_gz_criteo
         columns:
           - name: date_date
+            tests:
+              - unique
+              - not_null
+
+      - name: campaigns
+        identifier: int_campaigns
+
+      - name: campaigns_day
+        identifier: int_campaigns_day
 
