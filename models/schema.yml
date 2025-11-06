@@ -65,3 +65,6 @@ sources:
         identifier: int_campaigns_day
       - name: finances camp
         identifier: finance_campaigns_days
+
+      - name: finances month
+        identifier: finance_campaigns_month
