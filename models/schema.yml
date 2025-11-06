@@ -31,3 +31,27 @@ sources:
         identifier: raw_gz_ship
         columns:
           - name: orders_id
+
+      - name: bing
+        identifier: raw_gz_bing
+        description: "bing recherche et depense"
+        columns:
+          - name: date_date
+
+         
+
+      - name: facebook
+        identifier: raw_gz_facebook
+        columns:
+          - name: date_date
+
+
+      - name: adwords
+        identifier: raw_gz_criteo
+        columns:
+          - name: date_date
+
+      - name: criteo
+        identifier: raw_gz_criteo
+        columns:
+          - name: date_date
